@@ -1,0 +1,349 @@
+---
+import { Image } from 'astro:assets';
+import {
+	ArrowRight,
+	ArrowUpRight,
+	Cloud,
+	Cpu,
+	Database,
+	Layers3,
+	LockKeyhole,
+	Mail,
+	Menu,
+	Network,
+	Server,
+	ShieldCheck,
+	Workflow,
+	X,
+} from '@lucide/astro';
+import heroImage from '../assets/images/yunwai-hero.webp';
+import cityImage from '../assets/images/yunwai-city.webp';
+import computeImage from '../assets/images/yunwai-compute.webp';
+import '../styles/global.css';
+
+const base = import.meta.env.BASE_URL;
+const year = new Date().getFullYear();
+
+const capabilities = [
+	{
+		icon: Cloud,
+		title: '云平台工程',
+		body: '从架构规划到持续交付，为业务建立清晰、稳定、可演进的云端底座。',
+		className: 'capability capability-accent',
+	},
+	{
+		icon: Cpu,
+		title: '智能系统',
+		body: '围绕真实业务流程设计智能应用，让模型能力成为可管理的生产力。',
+		className: 'capability capability-image',
+	},
+	{
+		icon: Database,
+		title: '数据基础设施',
+		body: '打通采集、治理与分析链路，让分散的数据形成可复用的业务资产。',
+		className: 'capability capability-soft',
+	},
+	{
+		icon: ShieldCheck,
+		title: '安全与可靠性',
+		body: '把权限、审计、容灾和可观测性纳入系统设计，而不是上线后的补丁。',
+		className: 'capability capability-pattern',
+	},
+];
+
+const approach = [
+	{
+		icon: Layers3,
+		title: '理解业务',
+		body: '先厘清目标、约束与协作边界，再决定技术路线。',
+	},
+	{
+		icon: Workflow,
+		title: '建立系统',
+		body: '用可验证的架构、接口与交付节奏，把复杂问题拆开。',
+	},
+	{
+		icon: Network,
+		title: '持续演进',
+		body: '通过监控、反馈与迭代，让系统随着业务稳定成长。',
+	},
+];
+---
+
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta
+			name="description"
+			content="云外科技专注云平台工程、智能系统、数据基础设施与企业级安全，为组织构建清晰、可靠、可持续演进的数字能力。"
+		/>
+		<meta name="theme-color" content="#111827" media="(prefers-color-scheme: dark)" />
+		<meta name="theme-color" content="#f4f7fb" media="(prefers-color-scheme: light)" />
+		<meta property="og:title" content="云外科技 | 让技术，抵达云外" />
+		<meta
+			property="og:description"
+			content="以云、数据与智能系统，为企业构建可持续演进的数字能力。"
+		/>
+		<meta property="og:type" content="website" />
+		<link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+		<link rel="canonical" href="https://rainchen537.github.io/yunwai-tech/" />
+		<title>云外科技 | 让技术，抵达云外</title>
+		<script type="application/ld+json" set:html={JSON.stringify({
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: '云外科技',
+			description: '专注云平台工程、智能系统、数据基础设施与企业级安全的科技企业。',
+			url: 'https://rainchen537.github.io/yunwai-tech/',
+		})} />
+	</head>
+	<body>
+		<a class="skip-link" href="#main">跳到主要内容</a>
+
+		<header class="site-header" data-header>
+			<div class="shell nav-shell">
+				<a class="brand" href="#top" aria-label="云外科技首页">
+					<span class="brand-mark" aria-hidden="true"><Cloud size={20} stroke-width={1.8} /></span>
+					<span class="brand-name">云外科技</span>
+					<span class="brand-en">YUNWAI TECH</span>
+				</a>
+
+				<nav class="desktop-nav" aria-label="主导航">
+					<a href="#capabilities">核心能力</a>
+					<a href="#industries">行业实践</a>
+					<a href="#approach">工作方式</a>
+					<a href="#about">关于我们</a>
+				</nav>
+
+				<a class="nav-cta" href="#contact">
+					合作咨询
+					<ArrowUpRight size={16} stroke-width={1.8} aria-hidden="true" />
+				</a>
+
+				<button
+					class="menu-button"
+					type="button"
+					aria-label="打开导航"
+					aria-expanded="false"
+					aria-controls="mobile-nav"
+					data-menu-button
+				>
+					<Menu class="menu-open-icon" size={22} stroke-width={1.8} aria-hidden="true" />
+					<X class="menu-close-icon" size={22} stroke-width={1.8} aria-hidden="true" />
+				</button>
+			</div>
+
+			<nav class="mobile-nav" id="mobile-nav" aria-label="移动端导航" data-mobile-nav>
+				<a href="#capabilities">核心能力</a>
+				<a href="#industries">行业实践</a>
+				<a href="#approach">工作方式</a>
+				<a href="#about">关于我们</a>
+				<a href="#contact">合作咨询</a>
+			</nav>
+		</header>
+
+		<main id="main">
+			<section class="hero shell" id="top" aria-labelledby="hero-title">
+				<div class="hero-copy">
+					<h1 id="hero-title">让技术，<br />抵达云外。</h1>
+					<p>以云、数据与智能系统，为企业构建可持续演进的数字能力。</p>
+					<div class="hero-actions">
+						<a class="button button-primary" href="#contact">
+							合作咨询
+							<ArrowRight size={17} stroke-width={1.8} aria-hidden="true" />
+						</a>
+						<a class="button button-secondary" href="#capabilities">了解能力</a>
+					</div>
+				</div>
+
+				<div class="hero-visual" aria-label="云端数据基础设施概念图">
+					<Image
+						src={heroImage}
+						alt="穿过云层的现代数据中心机柜"
+						width={1200}
+						height={1500}
+						format="webp"
+						quality={82}
+						loading="eager"
+						fetchpriority="high"
+					/>
+					<div class="hero-visual-label" aria-hidden="true">
+						<Server size={18} stroke-width={1.7} />
+						<span>从基础设施到智能应用</span>
+					</div>
+				</div>
+			</section>
+
+			<section class="section shell" id="capabilities" aria-labelledby="capabilities-title">
+				<div class="section-heading reveal">
+					<h2 id="capabilities-title">把复杂技术，<br />变成清晰能力。</h2>
+					<p>从底层平台到业务应用，我们关注系统之间如何连接，也关注技术如何真正被组织使用。</p>
+				</div>
+
+				<div class="capabilities-layout">
+					{capabilities.map(({ icon: Icon, title, body, className }, index) => (
+						<article class={className} style={`--delay: ${index * 70}ms`}>
+							<div class="capability-icon" aria-hidden="true">
+								<Icon size={24} stroke-width={1.65} />
+							</div>
+							<div>
+								<h3>{title}</h3>
+								<p>{body}</p>
+							</div>
+							{index === 1 && (
+								<Image
+									class="capability-photo"
+									src={computeImage}
+									alt="玻璃晶圆与光纤组成的计算结构"
+									width={900}
+									height={600}
+									format="webp"
+									quality={78}
+									loading="lazy"
+								/>
+							)}
+						</article>
+					))}
+				</div>
+			</section>
+
+			<section class="industry-section" id="industries" aria-labelledby="industries-title">
+				<div class="industry-media">
+					<Image
+						src={cityImage}
+						alt="云层中的现代沿海城市与数字连接网络"
+						width={1920}
+						height={1080}
+						format="webp"
+						quality={80}
+						loading="lazy"
+					/>
+				</div>
+				<div class="shell industry-content reveal">
+					<div class="industry-copy">
+						<h2 id="industries-title">面向真实场景，<br />构建长期价值。</h2>
+						<p>我们将技术方案放回业务现场，在制造、零售、园区与专业服务等场景中寻找可落地的连接方式。</p>
+					</div>
+					<div class="industry-list" aria-label="行业服务范围">
+						<span>智慧制造</span>
+						<span>数字园区</span>
+						<span>现代零售</span>
+						<span>专业服务</span>
+					</div>
+				</div>
+			</section>
+
+			<section class="section shell approach" id="approach" aria-labelledby="approach-title">
+				<div class="approach-intro reveal">
+					<div class="approach-icon" aria-hidden="true">
+						<LockKeyhole size={26} stroke-width={1.6} />
+					</div>
+					<h2 id="approach-title">可靠，不只是上线那一刻。</h2>
+					<p>我们把架构、协作、安全与运营放在同一张图里考虑，让每次交付都能留下可继续生长的基础。</p>
+				</div>
+
+				<div class="approach-list">
+					{approach.map(({ icon: Icon, title, body }, index) => (
+						<article class="approach-item reveal" style={`--delay: ${index * 80}ms`}>
+							<div class="approach-item-icon" aria-hidden="true">
+								<Icon size={23} stroke-width={1.65} />
+							</div>
+							<div>
+								<h3>{title}</h3>
+								<p>{body}</p>
+							</div>
+						</article>
+					))}
+				</div>
+			</section>
+
+			<section class="section shell about" id="about" aria-labelledby="about-title">
+				<div class="about-line reveal">
+					<span aria-hidden="true">Y</span>
+					<p>云外，不是更远的地方。<br />是让技术拥有更开阔的可能。</p>
+				</div>
+				<div class="about-copy reveal">
+					<h2 id="about-title">关于云外科技</h2>
+					<p>我们是一家关注企业数字基础设施与智能化应用的科技公司。以工程能力回应复杂问题，以长期视角建立可信合作。</p>
+				</div>
+			</section>
+
+			<section class="contact-section" id="contact" aria-labelledby="contact-title">
+				<div class="shell contact-inner reveal">
+					<div>
+						<h2 id="contact-title">一起把想法，<br />变成可靠系统。</h2>
+						<p>如果你正在规划新的数字项目，欢迎与云外科技交流。</p>
+					</div>
+					<a class="contact-link" href="mailto:contact@yunwai-tech.cn">
+						<span>
+							<Mail size={20} stroke-width={1.7} aria-hidden="true" />
+							contact@yunwai-tech.cn
+						</span>
+						<ArrowUpRight size={28} stroke-width={1.5} aria-hidden="true" />
+					</a>
+				</div>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div class="shell footer-inner">
+				<a class="brand footer-brand" href="#top" aria-label="返回云外科技首页">
+					<span class="brand-mark" aria-hidden="true"><Cloud size={20} stroke-width={1.8} /></span>
+					<span class="brand-name">云外科技</span>
+				</a>
+				<p>© {year} 云外科技. 保留所有权利。</p>
+				<div class="footer-links">
+					<a href="#capabilities">能力</a>
+					<a href="#industries">行业</a>
+					<a href="#about">关于</a>
+				</div>
+			</div>
+		</footer>
+
+		<script>
+			const menuButton = document.querySelector('[data-menu-button]');
+			const mobileNav = document.querySelector('[data-mobile-nav]');
+
+			const closeMenu = () => {
+				if (!(menuButton instanceof HTMLButtonElement) || !(mobileNav instanceof HTMLElement)) return;
+				menuButton.setAttribute('aria-expanded', 'false');
+				menuButton.setAttribute('aria-label', '打开导航');
+				mobileNav.removeAttribute('data-open');
+			};
+
+			if (menuButton instanceof HTMLButtonElement && mobileNav instanceof HTMLElement) {
+				menuButton.addEventListener('click', () => {
+					const open = menuButton.getAttribute('aria-expanded') === 'true';
+					menuButton.setAttribute('aria-expanded', String(!open));
+					menuButton.setAttribute('aria-label', open ? '打开导航' : '关闭导航');
+					mobileNav.toggleAttribute('data-open', !open);
+				});
+
+				mobileNav.querySelectorAll('a').forEach((link) => {
+					link.addEventListener('click', closeMenu);
+				});
+			}
+
+			const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+			const revealElements = document.querySelectorAll('.reveal, .capability');
+
+			if (reduceMotion || !('IntersectionObserver' in window)) {
+				revealElements.forEach((element) => element.classList.add('is-visible'));
+			} else {
+				const observer = new IntersectionObserver(
+					(entries) => {
+						entries.forEach((entry) => {
+							if (!entry.isIntersecting) return;
+							entry.target.classList.add('is-visible');
+							observer.unobserve(entry.target);
+						});
+					},
+					{ threshold: 0.16 },
+				);
+
+				revealElements.forEach((element) => observer.observe(element));
+			}
+		</script>
+	</body>
+</html>

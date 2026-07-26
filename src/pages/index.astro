@@ -21,8 +21,8 @@ import cityImage from '../assets/images/yunwai-city.webp';
 import computeImage from '../assets/images/yunwai-compute.webp';
 import '../styles/global.css';
 
-const base = import.meta.env.BASE_URL;
 const year = new Date().getFullYear();
+const canonicalUrl = new URL('/', Astro.site ?? 'https://yunwai.cloud').toString();
 
 const capabilities = [
 	{
@@ -87,15 +87,16 @@ const approach = [
 			content="以云、数据与智能系统，为企业构建可持续演进的数字能力。"
 		/>
 		<meta property="og:type" content="website" />
-		<link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
-		<link rel="canonical" href="https://rainchen537.github.io/yunwai-tech/" />
+		<meta property="og:url" content={canonicalUrl} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="canonical" href={canonicalUrl} />
 		<title>云外科技 | 让技术，抵达云外</title>
 		<script type="application/ld+json" set:html={JSON.stringify({
 			'@context': 'https://schema.org',
 			'@type': 'Organization',
 			name: '云外科技',
 			description: '专注云平台工程、智能系统、数据基础设施与企业级安全的科技企业。',
-			url: 'https://rainchen537.github.io/yunwai-tech/',
+			url: canonicalUrl,
 		})} />
 	</head>
 	<body>
